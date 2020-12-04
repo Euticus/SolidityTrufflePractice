@@ -1,4 +1,4 @@
-These are my answers for the 2nd Assessment for Energi
+********These are my answers for the 2nd Assessment for Energi*************
 
 
 
@@ -7,8 +7,7 @@ These are my answers for the 2nd Assessment for Energi
    Memory holds temporary values. Much less expensive.
    Stack holds small variables, but a limited amonunt of values. 
 3. Allows extra control over function calls. e.g. prerequisite much be reached before running
-4. Write a smart contract in solidity that sends funds to the last address that it received the
-funds from if no new funds have been received for 100 blocks
+4. SEE BELOW
 
 
 5. Should have a constructor method and bid() be rewritten using conditional as a modifier 
@@ -16,9 +15,12 @@ funds from if no new funds have been received for 100 blocks
 
 contract DosAuction {
 
+   address currentFrontrunner;
+   uint currentBid;
+
   constructor() public {
-    address currentFrontrunner = msg.sender;
-    uint currentBid = msg.value;
+    currentFrontrunner = msg.sender;
+    currentBid = msg.value;
   }
 
   function bid() payable notFrontRunner() {
@@ -36,3 +38,18 @@ contract DosAuction {
 }
 
 
+
+BELOW:
+
+I used a Ganache and Truffle to test my contract and I wrote some tests just to make sure it worked. 
+
+1. Start up Ganache in one terminal
+2. Open another terminal and run:
+   truffle compile
+   truffle run 
+   
+ You should see the tests that I ran inorder make sure this worked. 
+
+
+
+Thank you so much! This was a fun assessment!
